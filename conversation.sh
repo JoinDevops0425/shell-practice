@@ -1,6 +1,6 @@
 #!bin?bash
 
-PERSON1=TRUMP
+PERSON1=Modi
 PERSON2=MUSK
 
 echo "$PERSON1 is a great president"
