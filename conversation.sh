@@ -3,5 +3,5 @@
 PERSON1=TRUMP
 PERSON2=MUSK
 
-echo "Trump is a great president"
-echo "Musk is a great president"
+echo "$PERSON1 is a great president"
+echo "$PERSON2 is a great president"
