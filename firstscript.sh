@@ -19,7 +19,7 @@ then
     if [ $? -eq 0 ]
     then 
         echo "Mysql is installed"
-    esle 
+    else 
         echo "Mysql is not installed"
         exit 1  
 else 
