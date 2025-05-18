@@ -9,5 +9,5 @@ echo "The script was executed ate $TIMESTAMP"
 
 SUM=$((NUMBER1 + NUMBER2))
 
-echo $SUM
+echo "SUM of first and second number is : $SUM"
 
