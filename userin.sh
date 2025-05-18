@@ -1,5 +1,7 @@
 #!/bin/bash
 
-echo " Enter your pin"
-read -s PIN #here pin is a variable
-echo "your pin is $PIN"
+echo "Enter your PIN"
+
+read PIN #Here pin is a variable
+
+echo "Your pin is : $PiN"
