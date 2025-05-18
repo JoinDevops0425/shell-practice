@@ -21,7 +21,8 @@ then
         echo "Mysql is installed"
     else 
         echo "Mysql is not installed"
-        exit 1  
+        exit 1
+    fi      
 else 
     echo "Mysql is already installed"
 fi
