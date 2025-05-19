@@ -15,23 +15,23 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
 
-echo "script started executed at : $(date)" &>>$LOG_FILE
+echo "script started executed at : $(date)" | tee -a $LOG_FILE
 
 
 if [ $USERID -ne 0 ]
 then 
-    echo -e "$R Error :: $N PLease run with root access" &>>$LOG_FILE
+    echo -e "$R Error :: $N PLease run with root access" | tee -a $LOG_FILE
     exit 1
 else 
-    echo -e "$G You are root user$N" &>>$LOG_FILE
+    echo -e "$G You are root user$N" | tee -a $LOG_FILE
 fi
 
 VALIDATE(){
     if [ $1 -eq 0 ]
     then 
-        echo "$2 is $G installed $N" &>>$LOG_FILE
+        echo "$2 is $G installed $N" | tee -a $LOG_FILE
     else 
-        echo "$2 is $R not installed $N" &>>$LOG_FILE
+        echo "$2 is $R not installed $N" | tee -a $LOG_FILE
         exit 1
     fi 
 }
@@ -41,11 +41,11 @@ dnf list installed mysql
 
 if [ $? -ne 0 ]
 then 
-    echo -e "Mysql is not installed ..$G going to install$N" &>>$LOG_FILE
+    echo -e "Mysql is not installed ..$G going to install$N" | tee -a $LOG_FILE
     dnf install mysql -y
     VALIDATE $? "MYSQL"
 else 
-    echo -e "Mysql is already $G installed$N" &>>$LOG_FILE
+    echo -e "Mysql is already $G installed$N" | tee -a $LOG_FILE
 fi
 
 
@@ -55,11 +55,11 @@ dnf list installed nginx
 
 if [ $? -ne 0 ]
 then 
-    echo -e "nginx is not $R installed ..$G going to install $N" &>>$LOG_FILE
+    echo -e "nginx is not $R installed ..$G going to install $N" | tee -a $LOG_FILE
     dnf install nginx -y
     VALIDATE $? "NGINX"
 else  
-    echo -e "nginx is already $Y installed $N" &>>$LOG_FILE
+    echo -e "nginx is already $Y installed $N" | tee -a $LOG_FILE
 fi
 
 dnf list installed python3
@@ -67,9 +67,9 @@ dnf list installed python3
 
 if [ $? -ne 0 ]
 then 
-    echo -e "pythonn3 is not installed ..going to install" &>>$LOG_FILE
+    echo -e "pythonn3 is not installed ..going to install" | tee -a $LOG_FILE
     dnf install mysql -y
     VALIDATE $? "PYTHON3"
 else 
-    echo -e "python3 is already $Y installed $N" &>>$LOG_FILE
+    echo -e "python3 is already $Y installed $N" | tee -a $LOG_FILE
 fi
