@@ -2,7 +2,7 @@
 
 for i in {1..100}
 do 
-    echo $I
+    echo $i
 done
 echo "Hello World"
 
