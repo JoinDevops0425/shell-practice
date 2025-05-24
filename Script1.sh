@@ -3,7 +3,10 @@ GREETING="Hellow, Good Evening"
 
 echo "$GREETING, PID of script 1 is $$"
 
-./Script2.sh
+#./Script2.sh
+
+source ./Script2.sh
+
 
 
 
